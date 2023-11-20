@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="https://img.freepik.com/free-photo/cool-geometric-triangular-figure-neon-laser-light-great-backgrounds-wallpapers_181624-9331.jpg?size=626&ext=jpg&ga=GA1.1.1826414947.1700438400&semt=sph">
+    <meta property="og:title" content="My HTMX first try">
+    <meta property="og:description" content="My HTMX first try description meta tag content">
+    <link rel="icon" type="image/x-icon" href="https://img.pikbest.com/png-images/qiantu/cartoon-hand-drawn-astronaut-character-png-element_2502117.png!sw800">
+    <title>HTMX - Express</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,1000&display=swap" rel="stylesheet">
+    <style>
+    * {
+        font-family: 'Nunito', sans-serif;
+    }
+
+    section#result {
+        background-color: #7fffd4;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        margin-block-end: 3rem;
+        margin-inline: auto;
+        width: 60vw;
+        border-radius: 2rem;
+        min-height: 30vh;
+    }
+    </style>
+    <!-- <script src="./index.js" defer></script> -->
+    <script src="https://unpkg.com/htmx.org@1.9.8"></script>
+</head>
+<body>
+    <button hx-get="http://127.0.0.1:3001/test" hx-indicator="#loader" hx-target="#result">
+        Get current timestamp!
+    </button>
+    <h1 id="loader" class="htmx-indicator">Loading...</h1>
+    <section id="result">Result will be displayed here</section>
+</body>
+</html>
